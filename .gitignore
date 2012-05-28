@@ -8,3 +8,7 @@
 .settings
 .idea/
 *.kdev4
+
+
+# SVN Temp files
+.svn
