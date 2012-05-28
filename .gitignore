@@ -1,0 +1,10 @@
+# IDE/Editor temporary files
+*~
+*.swp
+*.bak
+.buildpath
+.cache
+.project
+.settings
+.idea/
+*.kdev4
