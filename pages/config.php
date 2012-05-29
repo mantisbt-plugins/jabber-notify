@@ -8,7 +8,7 @@ print_manage_menu();
 
 <br/>
 <form action="<?php echo plugin_page( 'config_update' ) ?>" method="post">
-
+<?php echo form_security_field( 'plugin_JabberNotifySystem_manage_config' ) ?>
 <table align="center" class="width50" cellspacing="1">
 <tr>
 	<td class="form-title" colspan="3">
