@@ -14,12 +14,46 @@
 # You should have received a copy of the GNU General Public License
 # along with MantisBT.  If not, see <http://www.gnu.org/licenses/>.
 
-$s_plugin_JNS_title = 'JNS (Jabber Notifier System)' ;
-$s_plugin_JNS_description = 'Система уведомлений по протоколу XMPP';
+$s_plugin_JabberNotifierSystem_title = 'Jabber Notifier System';
+$s_plugin_JabberNotifierSystem_description = 'Система уведомлений по протоколу XMPP';
 
-$s_plugin_JNS_config = 'Настройка';
+$s_plugin_JabberNotifierSystem_config = 'Настройка';
 
-$s_plugin_JNS_addbug_text = "Уведомлять о создании нового инцидента";
-$s_plugin_JNS_update_state_bug_text = "Уведомлять об изменении статуса инцидента";
+$s_plugin_JabberNotifierSystem_addbug_text = 'Уведомлять о создании нового инцидента';
+$s_plugin_JabberNotifierSystem_update_state_bug_text = 'Уведомлять об изменении статуса инцидента';
 
+$s_plugin_JabberNotifierSystem_separator = '---------------------------------------------------------------------------------';
+
+$s_plugin_JabberNotifierSystem_enabled  = 'Да';
+$s_plugin_JabberNotifierSystem_disabled = 'Нет';
+
+# Jabber setting strings 
+$s_plugin_JabberNotifierSystem_config_jabber = 'Настройки Jabber сервера';
+$s_plugin_JabberNotifierSystem_config_jabber_server = 'Имя или IP адрес Jabber сервера : порт';
+$s_plugin_JabberNotifierSystem_config_jabber_login = 'Логин пользователя для отправки сообщений';
+$s_plugin_JabberNotifierSystem_config_jabber_pwd = 'Пароль пользователя для отправки сообщений';
+
+# Send Messages setting strings 
+$s_plugin_JabberNotifierSystem_send_msg = 'Настройки отправки сообщений инициаторам инцидентов';
+$s_plugin_JabberNotifierSystem_send_new_resp = 'Уведомлять о назначении нового ответственного';
+$s_plugin_JabberNotifierSystem_send_new_resp_com = 'Уведомлять и инициатора, и нового ответственного';
+$s_plugin_JabberNotifierSystem_send_new_bugnote = 'Уведомлять о добавлении нового коментария к инциденту';
+$s_plugin_JabberNotifierSystem_send_new_state_10 = 'Уведомлять при изменении статуса на \'новый\'';
+$s_plugin_JabberNotifierSystem_send_new_state_20 = 'Уведомлять при изменении статуса на \'нужен отклик\'';
+$s_plugin_JabberNotifierSystem_send_new_state_30 = 'Уведомлять при изменении статуса на \'рассмотрен\'';
+$s_plugin_JabberNotifierSystem_send_new_state_40 = 'Уведомлять при изменении статуса на \'подтвержден\'';
+$s_plugin_JabberNotifierSystem_send_new_state_50 = 'Уведомлять при изменении статуса на \'назначен\'';
+$s_plugin_JabberNotifierSystem_send_new_state_80 = 'Уведомлять при изменении статуса на \'отработан\'';
+$s_plugin_JabberNotifierSystem_send_new_state_90 = 'Уведомлять при изменении статуса на \'закрыт\'';
+
+# Bugnote add strings
+$s_plugin_JabberNotifierSystem_bugnote_add_str1 = 'Уважаемый(ая)';
+$s_plugin_JabberNotifierSystem_bugnote_add_str2 = 'В Вашей заявке был добавлен комментарий.';
+$s_plugin_JabberNotifierSystem_bugnote_add_str3 = 'ID заявки:';
+$s_plugin_JabberNotifierSystem_bugnote_add_str4 = 'Проект:';
+$s_plugin_JabberNotifierSystem_bugnote_add_str5 = 'Статус:';
+$s_plugin_JabberNotifierSystem_bugnote_add_str6 = 'Суть задачи:';
+$s_plugin_JabberNotifierSystem_bugnote_add_str7 = 'Инициатор:';
+$s_plugin_JabberNotifierSystem_bugnote_add_str8 = 'Коментарий: ';
+$s_plugin_JabberNotifierSystem_bugnote_add_str9 = 'Ссылка на комментарий:';
 ?>
