@@ -84,7 +84,7 @@ class JabberNotifierSystemPlugin extends MantisPlugin {
                 plugin_lang_get('separator') . "\n" .
                 plugin_lang_get('bugnote_add_str9') . ' ' . string_get_bugnote_view_url_with_fqdn( $p_bug_id, $p_bugnote_id );
 
-    //$conn->useEncryption(false);        //Enable this line if you get a error �Fatal error: Cannot access protected property XMPPHP_XMPP::$use_encryption� �
+    //$conn->useEncryption(false);        //Enable this line if you get a error "Fatal error: Cannot access protected property XMPPHP_XMPP::$use_encryption"
     try
     {
       $this->conn->connect();
