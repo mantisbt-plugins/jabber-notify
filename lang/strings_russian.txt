@@ -1,59 +1,198 @@
 <?php
-# Copyright (C) 2012	AcanthiS
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with MantisBT.  If not, see <http://www.gnu.org/licenses/>.
+/*
+   Copyright 2012 Nikitin Artem (AcanthiS)
+   
+	E-Mail : acanthis@ya.ru
+	ICQ    : 411746920
 
-$s_plugin_JabberNotifierSystem_title = 'Jabber Notifier System';
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+*/
+
+ /**
+  * Main plugin strings
+  */
+$s_plugin_JabberNotifierSystem_title       = 'Jabber Notifier System';
 $s_plugin_JabberNotifierSystem_description = 'Система уведомлений по протоколу XMPP';
 
-$s_plugin_JabberNotifierSystem_config = 'Настройка';
+ /**
+  * Menu plugin links
+  */ 
+$s_plugin_JabberNotifierSystem_main_plugin_config 			  = 'Основные настройки';
+$s_plugin_JabberNotifierSystem_xmpp_plugin_config             = 'Индивидуальные Jabber логины';
+$s_plugin_JabberNotifierSystem_custom_proj_user_plugin_config = 'Управление выборочной отправкой';
 
-$s_plugin_JabberNotifierSystem_addbug_text = 'Уведомлять о создании нового инцидента';
-$s_plugin_JabberNotifierSystem_update_state_bug_text = 'Уведомлять об изменении статуса инцидента';
+ /**
+  * Main config strings
+  */ 
+# Jabber setting strings 
+$s_plugin_JabberNotifierSystem_config_jabber         = 'Настройки Jabber сервера';
+$s_plugin_JabberNotifierSystem_config_jabber_server  = 'Имя или IP адрес Jabber сервера : порт';
+$s_plugin_JabberNotifierSystem_config_jabber_timeout = 'Таймаут для подключения к серверу (сек)';
+$s_plugin_JabberNotifierSystem_config_jabber_login   = 'Логин пользователя для отправки сообщений';
+$s_plugin_JabberNotifierSystem_config_jabber_pwd     = 'Пароль пользователя для отправки сообщений';
+$s_plugin_JabberNotifierSystem_config_jabber_ex_srv  = 'Пример: jabber.org:5222';
 
+# Send notifier setting strings 
+$s_plugin_JabberNotifierSystem_send_msg          = 'Настройка уведомлений инициаторам инцидентов';
+$s_plugin_JabberNotifierSystem_send_new_bugnote  = 'Уведомлять при добавлении коментария';
+$s_plugin_JabberNotifierSystem_send_edit_bugnote = 'Уведомлять при изменении коментария';
+$s_plugin_JabberNotifierSystem_send_del_bugnote  = 'Уведомлять при удалении коментария';
+
+# Send actions notifier setting strings 
+$s_plugin_JabberNotifierSystem_action_notif_setting = 'Настройка уведомлений инициаторам при множественной обработке инцидентов';
+$s_plugin_JabberNotifierSystem_send_new_resp        = 'Уведомлять при назначении нового ответственного';
+$s_plugin_JabberNotifierSystem_send_new_resp_com    = 'Уведомлять и инициатора, и нового ответственного';
+$s_plugin_JabberNotifierSystem_send_move_bugnote    = 'Уведомлять при перемещении инцидента';
+$s_plugin_JabberNotifierSystem_send_del_bug         = 'Уведомлять при удалении инцидента';
+$s_plugin_JabberNotifierSystem_send_new_state_10    = 'Уведомлять при изменении статуса на \'новый\'';
+$s_plugin_JabberNotifierSystem_send_new_state_20 	= 'Уведомлять при изменении статуса на \'нужен отклик\'';
+$s_plugin_JabberNotifierSystem_send_new_state_30 	= 'Уведомлять при изменении статуса на \'рассмотрен\'';
+$s_plugin_JabberNotifierSystem_send_new_state_40 	= 'Уведомлять при изменении статуса на \'подтвержден\'';
+$s_plugin_JabberNotifierSystem_send_new_state_50 	= 'Уведомлять при изменении статуса на \'назначен\'';
+$s_plugin_JabberNotifierSystem_send_new_state_80 	= 'Уведомлять при изменении статуса на \'отработан\'';
+$s_plugin_JabberNotifierSystem_send_new_state_90 	= 'Уведомлять при изменении статуса на \'закрыт\'';
+$s_plugin_JabberNotifierSystem_send_mes_up_prior 	= 'Уведомлять при изменении приоритета';
+$s_plugin_JabberNotifierSystem_send_mes_up_severity = 'Уведомлять при изменении серьезности';
+$s_plugin_JabberNotifierSystem_send_mes_up_status 	= 'Уведомлять при изменении статуса';
+$s_plugin_JabberNotifierSystem_send_mes_up_category = 'Уведомлять при изменении категории';
+$s_plugin_JabberNotifierSystem_send_mes_up_view 	= 'Уведомлять при изменении видимости';
+$s_plugin_JabberNotifierSystem_send_mes_add_note 	= 'Уведомлять при добавлении коментария';
+$s_plugin_JabberNotifierSystem_send_mes_attach_tags = 'Уведомлять при добавлении метки';
+
+# Quick send notifier setting strings 
+$s_plugin_JabberNotifierSystem_config_view        = 'Настройка быстрой отправки сообщения';
+$s_plugin_JabberNotifierSystem_add_send_quick_msg = 'Добавить быструю отправку в инцидент';
+$s_plugin_JabberNotifierSystem_add_send_quick_msg = 'Отправить сообщение инициатору в Jabber';
+
+# Change Jabber login setting strings
+$s_plugin_JabberNotifierSystem_edit_xmpp_user         = 'Настройка изменения Jabber логина';
+$s_plugin_JabberNotifierSystem_change_user_xmpp_login = 'Разрешить пользователю изменять свой Jabber логин';
+$s_plugin_JabberNotifierSystem_xmpp_login_warn        = 'Логин должен состоять из латинских символов';
+
+ /**
+  * Custom Jabber logins strings
+  */ 
+# Add login setting strings 
+$s_plugin_JabberNotifierSystem_config_add_jabber_user = 'Добавление пользователей для индивидуального Jabber логина';
+
+# Custom Jabber login setting strings 
+$s_plugin_JabberNotifierSystem_config_jabber_login_list = 'Пользователи с индивидуальным Jabber логином';
+$s_plugin_JabberNotifierSystem_xmpp_login               = 'Jabber логин';
+$s_plugin_JabberNotifierSystem_disabled_chanche_login   = 'Запретить смену логина';
+
+ /**
+  * User management and project management for custom notifications
+  */ 
+# Add users and projects setting strings 
+$s_plugin_JabberNotifierSystem_config_manage_users            = 'Добавление пользователей и проектов для выборочной отправки';
+$s_plugin_JabberNotifierSystem_manage_custom_proj_title       = 'Управление пользователями и проектами для выборочной отправки *';
+$s_plugin_JabberNotifierSystem_manage_custom_proj_warning_msg = '* Пользователи, которых нет в этой таблице получают сообщения во всех проектах';
+$s_plugin_JabberNotifierSystem_config_manage_users_proj       = 'Проекты в которых пользователь будет получать сообщения';
+$s_plugin_JabberNotifierSystem_add_projects                   = 'Добавление проектов';
+
+ /**
+  * Buttons strings
+  */ 
+$s_plugin_JabberNotifierSystem_enabled                    = 'Да';
+$s_plugin_JabberNotifierSystem_disabled                   = 'Нет';
+$s_plugin_JabberNotifierSystem_ok                         = 'Ok';
+$s_plugin_JabberNotifierSystem_del_btn_txt                = 'Удалить';
+$s_plugin_JabberNotifierSystem_change_btn_txt             = 'Изменить';
+$s_plugin_JabberNotifierSystem_add_btn_txt                = 'Добавить';
+$s_plugin_JabberNotifierSystem_del_xmpp_user_msg_btn_txt  = 'Удалить пользователя';
+$s_plugin_JabberNotifierSystem_add_projects_btn_txt       = 'Добавить проект(ы)';
+$s_plugin_JabberNotifierSystem_edit_xmpp_user_msg_btn_txt = 'Изменить Jabber логин';
+$s_plugin_JabberNotifierSystem_send_msg_btn_txt           = 'Отправить';
+
+ /**
+  * Table strings
+  */ 
+$s_plugin_JabberNotifierSystem_user         = 'Пользователь';
+$s_plugin_JabberNotifierSystem_config_users = 'Пользователи';
+$s_plugin_JabberNotifierSystem_projects     = 'Проекты';
+$s_plugin_JabberNotifierSystem_action       = 'Действие';
+$s_plugin_JabberNotifierSystem_xmpp_login   = 'Jabber логин'; 
+
+ /**
+  * Messages strings
+  */ 
+$s_plugin_JabberNotifierSystem_err_add_proj           = 'У данного пользователя добавлены все проекты.';
+$s_plugin_JabberNotifierSystem_cust_prj_usr_del_quest = 'Вы уверены, что хотите удалить пользователя из выборочной отправки?';
+$s_plugin_JabberNotifierSystem_act_delete_xmpp_user   = 'Вы уверены, что хотите удалить Jabber логин пользователя?';
+$s_plugin_JabberNotifierSystem_operation_successful   = 'Операция выполнена успешна';
+$s_plugin_JabberNotifierSystem_msg_send_successful    = 'Сообщение успешно отправлено';
+$s_plugin_JabberNotifierSystem_msg_send_error         = 'Ошибка при отправке сообщения';
+
+ /**
+  * Notifications strings
+  */ 
 $s_plugin_JabberNotifierSystem_separator = '---------------------------------------------------------------------------------';
 
-$s_plugin_JabberNotifierSystem_enabled  = 'Да';
-$s_plugin_JabberNotifierSystem_disabled = 'Нет';
+# Coment strings
+$s_plugin_JabberNotifierSystem_msg_action_bugnote_add   = 'В Вашем инциденте был добавлен комментарий.';
+$s_plugin_JabberNotifierSystem_msg_action_bugnote_edit  = 'В Вашем инциденте был изменён комментарий.';
+$s_plugin_JabberNotifierSystem_msg_action_bugnote_del   = 'В Вашем инциденте был удалён комментарий.';
+$s_plugin_JabberNotifierSystem_msg_note_change          = 'Коментарий (измененный): ';
+$s_plugin_JabberNotifierSystem_msg_note                 = 'Коментарий: ';
+$s_plugin_JabberNotifierSystem_msg_note_id              = 'ID коментария: ';
+$s_plugin_JabberNotifierSystem_msg_link_note            = 'Ссылка на комментарий:';
+$s_plugin_JabberNotifierSystem_msg_link_change_note     = 'Ссылка на измененный комментарий:';
 
-# Jabber setting strings 
-$s_plugin_JabberNotifierSystem_config_jabber = 'Настройки Jabber сервера';
-$s_plugin_JabberNotifierSystem_config_jabber_server = 'Имя или IP адрес Jabber сервера : порт';
-$s_plugin_JabberNotifierSystem_config_jabber_login = 'Логин пользователя для отправки сообщений';
-$s_plugin_JabberNotifierSystem_config_jabber_pwd = 'Пароль пользователя для отправки сообщений';
+# Quick message strings
+$s_plugin_JabberNotifierSystem_msg_action_send_quick_msg = 'Вам было отправлено быстрое сообщение.';
+$s_plugin_JabberNotifierSystem_msg_quick_msg             = 'Сообщение: ';
 
-# Send Messages setting strings 
-$s_plugin_JabberNotifierSystem_send_msg = 'Настройки отправки сообщений инициаторам инцидентов';
-$s_plugin_JabberNotifierSystem_send_new_resp = 'Уведомлять о назначении нового ответственного';
-$s_plugin_JabberNotifierSystem_send_new_resp_com = 'Уведомлять и инициатора, и нового ответственного';
-$s_plugin_JabberNotifierSystem_send_new_bugnote = 'Уведомлять о добавлении нового коментария к инциденту';
-$s_plugin_JabberNotifierSystem_send_new_state_10 = 'Уведомлять при изменении статуса на \'новый\'';
-$s_plugin_JabberNotifierSystem_send_new_state_20 = 'Уведомлять при изменении статуса на \'нужен отклик\'';
-$s_plugin_JabberNotifierSystem_send_new_state_30 = 'Уведомлять при изменении статуса на \'рассмотрен\'';
-$s_plugin_JabberNotifierSystem_send_new_state_40 = 'Уведомлять при изменении статуса на \'подтвержден\'';
-$s_plugin_JabberNotifierSystem_send_new_state_50 = 'Уведомлять при изменении статуса на \'назначен\'';
-$s_plugin_JabberNotifierSystem_send_new_state_80 = 'Уведомлять при изменении статуса на \'отработан\'';
-$s_plugin_JabberNotifierSystem_send_new_state_90 = 'Уведомлять при изменении статуса на \'закрыт\'';
+# Delete issue strings
+$s_plugin_JabberNotifierSystem_msg_action_bug_del = 'Ваш инцидент был удалён.';
 
-# Bugnote add strings
-$s_plugin_JabberNotifierSystem_bugnote_add_str1 = 'Уважаемый(ая)';
-$s_plugin_JabberNotifierSystem_bugnote_add_str2 = 'В Вашей заявке был добавлен комментарий.';
-$s_plugin_JabberNotifierSystem_bugnote_add_str3 = 'ID заявки:';
-$s_plugin_JabberNotifierSystem_bugnote_add_str4 = 'Проект:';
-$s_plugin_JabberNotifierSystem_bugnote_add_str5 = 'Статус:';
-$s_plugin_JabberNotifierSystem_bugnote_add_str6 = 'Суть задачи:';
-$s_plugin_JabberNotifierSystem_bugnote_add_str7 = 'Инициатор:';
-$s_plugin_JabberNotifierSystem_bugnote_add_str8 = 'Коментарий: ';
-$s_plugin_JabberNotifierSystem_bugnote_add_str9 = 'Ссылка на комментарий:';
+# Close issue strings
+$s_plugin_JabberNotifierSystem_msg_action_bug_close = 'Вашему инциденту был присвоен статус "Закрыт".';
+
+# Move issue strings 
+$s_plugin_JabberNotifierSystem_msg_action_bug_move = 'Ваш инцидент был перемещен.';
+$s_plugin_JabberNotifierSystem_msg_move_proj       = 'Перемещен в проект:';
+
+# Resolve issue strings 
+$s_plugin_JabberNotifierSystem_msg_action_bug_resolve = 'Вашему инциденту был присвоен статус "Отработан".';
+$s_plugin_JabberNotifierSystem_msg_resolution         = 'Вариант решения:';
+
+# Assign issue strings 
+$s_plugin_JabberNotifierSystem_msg_action_bug_assign_in  = 'Вашему инциденту назначен новый ответственный.';
+$s_plugin_JabberNotifierSystem_msg_action_bug_assign_out = 'Вы назначены ответственным по инциденту.';
+
+# Update priority issue strings 
+$s_plugin_JabberNotifierSystem_msg_action_bug_up_prior     = 'В Вашем инциденте был изменен приоритет.';
+$s_plugin_JabberNotifierSystem_msg_action_bug_up_prior_str = 'Новый приоритет:';
+
+# Update status issue strings 
+$s_plugin_JabberNotifierSystem_msg_action_bug_up_status     = 'Статус Вашего инцидента был изменён.';
+$s_plugin_JabberNotifierSystem_msg_action_bug_up_status_str = 'Новый статус:';
+
+# Update category issue strings 
+$s_plugin_JabberNotifierSystem_msg_action_bug_up_category     = 'Категория Вашего инцидента была изменена.';
+$s_plugin_JabberNotifierSystem_msg_action_bug_up_category_str = 'Новая категория:';
+
+# Update view status issue strings 
+$s_plugin_JabberNotifierSystem_msg_action_bug_up_view     = 'Видимость Вашего инцидента была изменена.';
+$s_plugin_JabberNotifierSystem_msg_action_bug_up_view_str = 'Новая видимость:';
+
+# Other strings
+$s_plugin_JabberNotifierSystem_msg_call       = 'Уважаемый(ая)';
+$s_plugin_JabberNotifierSystem_msg_bug_id     = 'ID инцидента:';
+$s_plugin_JabberNotifierSystem_msg_proj_id    = 'Проект:';
+$s_plugin_JabberNotifierSystem_msg_state      = 'Статус:';
+$s_plugin_JabberNotifierSystem_msg_header     = 'Суть задачи:';
+$s_plugin_JabberNotifierSystem_msg_assign     = 'Новый ответственный:';
+$s_plugin_JabberNotifierSystem_msg_initiator  = 'Инициатор:';
+$s_plugin_JabberNotifierSystem_msg_link_bug   = 'Ссылка на инцидент:';
 ?>
