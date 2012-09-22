@@ -1,7 +1,7 @@
 <?php
 /*
    Copyright 2012 Nikitin Artem (AcanthiS)
-   
+
 	E-Mail : acanthis@ya.ru
 	ICQ    : 411746920
 
@@ -19,37 +19,37 @@
 */
 
 $xmpp_login = gpc_get_string( 'xmpp_login', '' );
-$user_id    = gpc_get_string( 'user_id', '' );
+$user_id = gpc_get_string( 'user_id', '' );
 
 // Get user login
-$user_table          =  db_get_table( 'mantis_user_table' );
+$user_table = db_get_table( 'mantis_user_table' );
 $query_rep_user_name = "SELECT username FROM $user_table WHERE id = $user_id;";
-$res_user_name       = db_query( $query_rep_user_name );
+$res_user_name = db_query( $query_rep_user_name );
 
 while ( $row_user_name = db_fetch_array( $res_user_name )) {
-	$user_name = $row_user_name['username'];
+  $user_name = $row_user_name['username'];
 }
 
 // Add xmpp login
 if ( $xmpp_login != '' ) {
-	$xmpp_table       = plugin_table('xmpp_login', 'JabberNotifierSystem');
-	$query_xmpp_login = "SELECT xmpp_login FROM $xmpp_table WHERE user_id = $user_id;";
-	$res_xmpp_login   = db_query( $query_xmpp_login );
+  $xmpp_table = plugin_table( 'xmpp_login', 'JabberNotifierSystem' );
+  $query_xmpp_login = "SELECT xmpp_login FROM $xmpp_table WHERE user_id = $user_id;";
+  $res_xmpp_login   = db_query( $query_xmpp_login );
 
-	if ( db_num_rows( $res_xmpp_login ) == 0 ) {
-		if ( $xmpp_login != $user_name ) {
-			$add_user_query = "INSERT INTO $xmpp_table (user_id, xmpp_login, chng_login) VALUES ($user_id, \"$xmpp_login\", 0);";
-			db_query( $add_user_query );
-			print_successful_redirect( 'account_page.php' );
-		} else {
-			print_successful_redirect( 'account_page.php' ); exit;
-        }
-	} else {
-		$add_user_query = "UPDATE $xmpp_table SET xmpp_login = \"$xmpp_login\" WHERE user_id = $user_id;";
-		db_query_bound( $add_user_query );
-		print_successful_redirect( 'account_page.php' );
-	}
+  if ( db_num_rows( $res_xmpp_login ) == 0 ) {
+    if ( $xmpp_login != $user_name ) {
+      $add_user_query = "INSERT INTO $xmpp_table (user_id, xmpp_login, chng_login) VALUES ($user_id, \"$xmpp_login\", 0);";
+      db_query( $add_user_query );
+      print_successful_redirect( 'account_page.php' );
+    } else {
+      print_successful_redirect( 'account_page.php' ); exit;
+    }
+  } else {
+    $add_user_query = "UPDATE $xmpp_table SET xmpp_login = \"$xmpp_login\" WHERE user_id = $user_id;";
+    db_query_bound( $add_user_query );
+    print_successful_redirect( 'account_page.php' );
+  }
 } else {
-	print_successful_redirect( 'account_page.php' ); exit; 
+  print_successful_redirect( 'account_page.php' ); exit;
 }
 ?>

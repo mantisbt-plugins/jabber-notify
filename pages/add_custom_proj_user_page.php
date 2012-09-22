@@ -1,7 +1,7 @@
 <?php
 /*
    Copyright 2012 Nikitin Artem (AcanthiS)
-   
+
 	E-Mail : acanthis@ya.ru
 	ICQ    : 411746920
 
@@ -42,26 +42,26 @@ html_page_top2();
 <tr class="row-1">
 	<td class="category" width="30%"><?php echo plugin_lang_get( 'projects' ) ?></td>
 	<td>
-		<?php
-		$proj_table_mantis = db_get_table( 'mantis_project_table' );
-		$proj_table_plug   = plugin_table('user_proj', 'JabberNotifierSystem');
-		$user_id           = gpc_get_string( 'user_id', '' );
-		$query_proj        = "SELECT proj_id FROM $proj_table_plug WHERE user_id = $user_id;";
-		$res               = db_query($query_proj);
-		while($row = db_fetch_array($res)) {
-			$proj_str = $row['proj_id'];
-		}
-		$query = "SELECT id, name FROM $proj_table_mantis WHERE id not in ($proj_str) order by name;";
-		$res = db_query($query);
-		$arr = explode(',', $proj_str);
-		if (db_num_rows($res) != 0) {
-			echo '<select name="project_id[]" multiple="multiple" size="8">';
-			while($row = db_fetch_array($res)) { echo '<option value="' . $row['id'] . '">' .  $row['name'] . '</option>'; }
-			echo '</select>';
-		} else {
-			echo plugin_lang_get( 'err_add_proj' );
-		}
-		?>
+<?php
+  $proj_table_mantis = db_get_table( 'mantis_project_table' );
+  $proj_table_plug = plugin_table( 'user_proj', 'JabberNotifierSystem' );
+  $user_id = gpc_get_string( 'user_id', '' );
+  $query_proj = "SELECT proj_id FROM $proj_table_plug WHERE user_id = $user_id;";
+  $res = db_query( $query_proj );
+  while( $row = db_fetch_array( $res ) ) {
+    $proj_str = $row['proj_id'];
+  }
+  $query = "SELECT id, name FROM $proj_table_mantis WHERE id not in ($proj_str) order by name;";
+  $res = db_query( $query );
+  $arr = explode( ',', $proj_str );
+  if ( db_num_rows( $res ) != 0 ) {
+    echo '<select name="project_id[]" multiple="multiple" size="8">';
+    while( $row = db_fetch_array( $res ) ) { echo '<option value="' . $row['id'] . '">' . $row['name'] . '</option>'; }
+    echo '</select>';
+  } else {
+    echo plugin_lang_get( 'err_add_proj' );
+  }
+?>
 	</td>
 </tr>
 </table><br>

@@ -21,9 +21,9 @@
 auth_reauthenticate();
 access_ensure_global_level( config_get( 'manage_plugin_threshold' ) );
 
-$user_id  =  gpc_get_string( 'user_id', '' );
-$table    = plugin_table( 'xmpp_login', 'JabberNotifierSystem' );
-$query    = "DELETE FROM $table WHERE user_id = $user_id;";
+$user_id =  gpc_get_string( 'user_id', '' );
+$table = plugin_table( 'xmpp_login', 'JabberNotifierSystem' );
+$query = "DELETE FROM $table WHERE user_id = $user_id;";
 db_query( $query );
 
 print_successful_redirect( plugin_page( 'config_xmpp_login', true ) );

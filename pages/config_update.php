@@ -1,7 +1,7 @@
 <?php
 /*
    Copyright 2012 Nikitin Artem (AcanthiS)
-   
+
 	E-Mail : acanthis@ya.ru
 	ICQ    : 411746920
 
@@ -21,33 +21,33 @@
 auth_reauthenticate();
 access_ensure_global_level( config_get( 'manage_plugin_threshold' ) );
 
-$f_jbr_server  =  gpc_get_string( 'jbr_server' );
-$f_jbr_port    =  gpc_get_string( 'jbr_port' );
-$f_jbr_timeout =  gpc_get_string( 'jbr_timeout' );
-$f_jbr_login   =  gpc_get_string( 'jbr_login' );
-$f_jbr_pwd     =  gpc_get_string( 'jbr_pwd' );
+$f_jbr_server = gpc_get_string( 'jbr_server' );
+$f_jbr_port = gpc_get_string( 'jbr_port' );
+$f_jbr_timeout = gpc_get_string( 'jbr_timeout' );
+$f_jbr_login = gpc_get_string( 'jbr_login' );
+$f_jbr_pwd = gpc_get_string( 'jbr_pwd' );
 
-$f_add_send_quick_msg    =  gpc_get_string( 'add_send_quick_msg' );
-$f_change_xmpp_login     =  gpc_get_string( 'change_xmpp_login' );
-$f_send_mes_new_assing   =  gpc_get_string( 'send_mes_new_assign' );
-$f_send_mes_new_bugnote  =  gpc_get_string( 'send_mes_new_bugnote' );
-$f_send_mes_edit_bugnote =  gpc_get_string( 'send_mes_edit_bugnote' );
-$f_send_mes_del_bugnote  =  gpc_get_string( 'send_mes_del_bugnote' );
-$f_send_mes_del_bug      =  gpc_get_string( 'send_mes_del_bug' );
-$f_send_mes_move_bug     =  gpc_get_string( 'send_mes_move_bug' );
-$f_send_mes_new_state_10 =  gpc_get_string( 'send_mes_new_state_10' );
-$f_send_mes_new_state_20 =  gpc_get_string( 'send_mes_new_state_20' );
-$f_send_mes_new_state_30 =  gpc_get_string( 'send_mes_new_state_30' );
-$f_send_mes_new_state_40 =  gpc_get_string( 'send_mes_new_state_40' );
-$f_send_mes_new_state_50 =  gpc_get_string( 'send_mes_new_state_50' );
-$f_send_mes_new_state_80 =  gpc_get_string( 'send_mes_new_state_80' );
-$f_send_mes_new_state_90 =  gpc_get_string( 'send_mes_new_state_90' );
+$f_add_send_quick_msg = gpc_get_string( 'add_send_quick_msg' );
+$f_change_xmpp_login = gpc_get_string( 'change_xmpp_login' );
+$f_send_mes_new_assing = gpc_get_string( 'send_mes_new_assign' );
+$f_send_mes_new_bugnote = gpc_get_string( 'send_mes_new_bugnote' );
+$f_send_mes_edit_bugnote = gpc_get_string( 'send_mes_edit_bugnote' );
+$f_send_mes_del_bugnote = gpc_get_string( 'send_mes_del_bugnote' );
+$f_send_mes_del_bug = gpc_get_string( 'send_mes_del_bug' );
+$f_send_mes_move_bug = gpc_get_string( 'send_mes_move_bug' );
+$f_send_mes_new_state_10 = gpc_get_string( 'send_mes_new_state_10' );
+$f_send_mes_new_state_20 = gpc_get_string( 'send_mes_new_state_20' );
+$f_send_mes_new_state_30 = gpc_get_string( 'send_mes_new_state_30' );
+$f_send_mes_new_state_40 = gpc_get_string( 'send_mes_new_state_40' );
+$f_send_mes_new_state_50 = gpc_get_string( 'send_mes_new_state_50' );
+$f_send_mes_new_state_80 = gpc_get_string( 'send_mes_new_state_80' );
+$f_send_mes_new_state_90 = gpc_get_string( 'send_mes_new_state_90' );
 
-$f_send_mes_up_prior     = gpc_get_string( 'send_mes_up_prior' );
-$f_send_mes_up_status    = gpc_get_string( 'send_mes_up_status' );
-$f_send_mes_up_category  = gpc_get_string( 'send_mes_up_category' );
-$f_send_mes_up_view      = gpc_get_string( 'send_mes_up_view' );
-$f_send_mes_add_note     = gpc_get_string( 'send_mes_add_note' );
+$f_send_mes_up_prior = gpc_get_string( 'send_mes_up_prior' );
+$f_send_mes_up_status = gpc_get_string( 'send_mes_up_status' );
+$f_send_mes_up_category = gpc_get_string( 'send_mes_up_category' );
+$f_send_mes_up_view = gpc_get_string( 'send_mes_up_view' );
+$f_send_mes_add_note = gpc_get_string( 'send_mes_add_note' );
 
 plugin_config_set( 'jbr_server', $f_jbr_server );
 plugin_config_set( 'jbr_port', $f_jbr_port );

@@ -27,7 +27,7 @@ html_page_top2();
 <br>
 <div align="center">
 <hr size="1" width="50%" />
-<?php echo plugin_lang_get( 'cust_prj_usr_del_quest' ) ?> 
+<?php echo plugin_lang_get( 'cust_prj_usr_del_quest' ) ?>
 <br>
 <?php echo plugin_lang_get( 'user' ) ?> : <?php echo user_get_realname(gpc_get_string( 'user_id', '' ))?><br>
 <form method="post" action="<?php echo plugin_page( 'delete_custom_proj_user.php' ) ?>">

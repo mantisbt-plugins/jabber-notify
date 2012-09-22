@@ -28,14 +28,14 @@ print_manage_menu();
 // Check row count xmpp_login table.
 $table = plugin_table( 'xmpp_login', 'JabberNotifierSystem' );
 $query = "SELECT * FROM $table;";
-$res   = db_query($query);
+$res   = db_query( $query );
 
-if ( db_num_rows($res) == 0 ) { 
-	$style      = '';
-	$view_table = 0;
+if ( db_num_rows( $res ) == 0 ) {
+  $style = '';
+  $view_table = 0;
 } else {
-	$style      = 'border-bottom:none;';
-	$view_table = 1;
+  $style = 'border-bottom:none;';
+  $view_table = 1;
 }
 ?>
 
@@ -68,14 +68,14 @@ if ( db_num_rows($res) == 0 ) {
 	  <form action="<?php echo plugin_page( 'add_xmpp_user.php' ) ?>" method="post">
 		<td class="center">
 			<select name="user_id[]" multiple="multiple" size="8">
-				<?php 
+				<?php
 				$user_table = db_get_table( 'mantis_user_table' );
-				$id_table = plugin_table('xmpp_login', 'JabberNotifierSystem');
+				$id_table = plugin_table( 'xmpp_login', 'JabberNotifierSystem' );
 				$query = "SELECT id, realname, username FROM $user_table WHERE id not in (select user_id from $id_table) order by realname;";
-				$res = db_query($query);
-				while($row = db_fetch_array($res)) {
+				$res = db_query( $query );
+				while( $row = db_fetch_array($res) ) {
 					$user_name = get_username( $row['id'] );
-					echo '<option value="' . $row['id'] . '">' .  $user_name . '</option>';
+					echo '<option value="' . $row['id'] . '">' . $user_name . '</option>';
 				}
 				?>
 			</select>
@@ -83,7 +83,7 @@ if ( db_num_rows($res) == 0 ) {
 		<td class="center">
 		   <input type="submit" class="button" value="<?php echo plugin_lang_get( 'add_btn_txt' ) ?>" />
 		</td>
-	  </form>	
+	  </form>
 	</tr>
 </table>
 
@@ -100,32 +100,32 @@ if ( db_num_rows($res) == 0 ) {
 		<td class="category"><?php echo plugin_lang_get( 'xmpp_login' ) ?></td>
 		<td class="category"><?php echo plugin_lang_get( 'action' ) ?></td>
 		<td class="category" width="10%"><?php echo plugin_lang_get( 'disabled_chanche_login' ) ?></td>
-	</tr>	
-	<?php 
-		$table             = plugin_table('xmpp_login', 'JabberNotifierSystem');
+	</tr>
+	<?php
+		$table = plugin_table( 'xmpp_login', 'JabberNotifierSystem' );
 		$user_table_mantis = db_get_table( 'mantis_user_table' );
-		$query             = "SELECT user_id, xmpp_login, chng_login FROM $table order by xmpp_login;";
-		$res               = db_query($query);
-		while($row = db_fetch_array($res)) {
-			$change  = $row['chng_login'];
+		$query = "SELECT user_id, xmpp_login, chng_login FROM $table order by xmpp_login;";
+		$res = db_query( $query );
+		while( $row = db_fetch_array( $res ) ) {
+			$change = $row['chng_login'];
 			$user_id = $row['user_id'];
 			if ( $change == 1 ) { $user_color_style = "background-color:#FCBDBD;"; } else { $user_color_style = ""; }
 			$can_change = $row['chng_login'] == 1 ? 'checked="CHECKED"' : null;
-	?>	
-	<tr  <?php echo helper_alternate_class() ?> style="<?php echo $user_color_style ?>"> 
-		<td> <?php echo "<a href=" . $g_path . "manage_user_edit_page.php?user_id=$user_id  target=\"_blank\">" . get_username( $user_id ) . "</a>" ?></td>
+	?>
+	<tr  <?php echo helper_alternate_class() ?> style="<?php echo $user_color_style ?>">
+		<td> <?php echo "<a href=" . $g_path . "manage_user_edit_page.php?user_id=$user_id\" target=\"_blank\">" . get_username( $user_id ) . "</a>" ?></td>
 		<td width="40%"> <?php echo $row['xmpp_login'] . '@' . plugin_config_get( 'jbr_server' ); ?></td>
 		<td class="center" width="20%">
 		<form action="<?php echo plugin_page( 'edit_xmpp_login_page.php' ) ?>" method="post">
 			<input type="hidden" name="user_id" value="<?php echo $row['user_id'] ?>"/>
 			<input type="hidden" name="xmpp_login" value="<?php echo $row['xmpp_login'] ?>"/>
 			<input type="submit" class="button-small" value="<?php echo plugin_lang_get( 'change_btn_txt' ) ?>" />
-		</form>	
+		</form>
 		<form action="<?php echo plugin_page( 'delete_xmpp_login_page.php' ) ?>" method="post">
 			<input type="hidden" name="user_id" value="<?php echo $row['user_id'] ?>"/>
 			<input type="hidden" name="xmpp_login" value="<?php echo $row['xmpp_login'] ?>"/>
 			<input type="submit" class="button-small" value="<?php echo plugin_lang_get( 'del_btn_txt' ) ?>" />
-		</form>	
+		</form>
 		</td>
 		<td class="center">
 			<form action="<?php echo plugin_page( 'change_can_xmpp_login.php' ) ?>" method="post">
@@ -139,7 +139,7 @@ if ( db_num_rows($res) == 0 ) {
 </table>
 <br>
 
-<?php 
+<?php
 }
 html_page_bottom1( __FILE__ );
 ?>

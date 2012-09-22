@@ -21,27 +21,27 @@
 auth_reauthenticate();
 access_ensure_global_level( config_get( 'manage_plugin_threshold' ) );
 
-$user_id  = gpc_get_string( 'user_id', '' );
-$proj_id  = gpc_get_string( 'proj_id', '' );
-$table    = plugin_table( 'user_proj', 'JabberNotifierSystem' );
-$query    = "SELECT proj_id FROM $table WHERE user_id = $user_id;";
-$res      = db_query( $query );
+$user_id = gpc_get_string( 'user_id', '' );
+$proj_id = gpc_get_string( 'proj_id', '' );
+$table = plugin_table( 'user_proj', 'JabberNotifierSystem' );
+$query = "SELECT proj_id FROM $table WHERE user_id = $user_id;";
+$res = db_query( $query );
 
 while( $row = db_fetch_array( $res ) ) {
-	$arr = explode( ',', $row['proj_id'] ); 
+  $arr = explode( ',', $row['proj_id'] );
 }
 
 sort( $arr );
 
 foreach( $arr as $key=>&$value ){
-	if( $value == $proj_id ){
-		unset( $arr[$key] );
-	}
+  if( $value == $proj_id ){
+    unset( $arr[$key] );
+  }
 }
-	
+
 $proj_id_str = implode( ",", $arr );
 $query_upd_proj = "UPDATE $table SET proj_id = \"$proj_id_str\" WHERE user_id = $user_id;";
 db_query( $query_upd_proj );
-	
+
 print_successful_redirect( plugin_page( 'config_custom_proj_user', true ) );
 ?>

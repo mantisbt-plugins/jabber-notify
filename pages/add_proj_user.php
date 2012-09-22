@@ -1,7 +1,7 @@
 <?php
 /*
    Copyright 2012 Nikitin Artem (AcanthiS)
-   
+
 	E-Mail : acanthis@ya.ru
 	ICQ    : 411746920
 
@@ -23,14 +23,14 @@ access_ensure_global_level( config_get( 'manage_plugin_threshold' ) );
 
 $f_user_id	= gpc_get_int_array( 'user_id', array() );
 $f_proj_id	= gpc_get_int_array( 'project_id', array() );
-$proj_table = plugin_table('user_proj', 'JabberNotifierSystem');
+$proj_table = plugin_table( 'user_proj', 'JabberNotifierSystem' );
 
 foreach( $f_user_id as $t_user_id ) {
-	if ( count($f_proj_id) != 0 ) { 
-		$proj_id=implode(',', $f_proj_id);
-		$add_user_query = "INSERT INTO $proj_table (user_id, proj_id) VALUES ($t_user_id, \"$proj_id\");";
-		db_query( $add_user_query );
-	}
+  if ( count( $f_proj_id ) != 0 ) {
+    $proj_id=implode( ',', $f_proj_id );
+    $add_user_query = "INSERT INTO $proj_table (user_id, proj_id) VALUES ($t_user_id, \"$proj_id\");";
+    db_query( $add_user_query );
+  }
 }
 
 print_successful_redirect( plugin_page( 'config_custom_proj_user', true ) );

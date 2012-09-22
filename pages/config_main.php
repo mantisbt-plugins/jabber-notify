@@ -1,7 +1,7 @@
 <?php
 /*
    Copyright 2012 Nikitin Artem (AcanthiS)
-   
+
 	E-Mail : acanthis@ya.ru
 	ICQ    : 411746920
 
@@ -28,7 +28,7 @@ print_manage_menu();
 <br/>
 <table align="center" class="width50" cellspacing="1" style="border:none">
 	<tr >
-		<td style="text-align:right;";>
+		<td style="text-align:right;">
 			[  <?php echo plugin_lang_get( 'main_plugin_config' ) ?> ]
 			[ <a href=" <?php echo plugin_page( 'config_xmpp_login', true ) ?> "> <?php echo plugin_lang_get( 'xmpp_plugin_config' ) ?></a> ]
 			[ <a href=" <?php echo plugin_page( 'config_custom_proj_user', true ) ?> "> <?php echo plugin_lang_get( 'custom_proj_user_plugin_config' ) ?></a> ]
@@ -50,7 +50,7 @@ print_manage_menu();
 			<span class="small"><?php echo plugin_lang_get( 'config_jabber_ex_srv' ) ?></span>
 		</td>
 		<td class="left" width="50%">
-			<input tabindex="6" type="text" name="jbr_server" size="30" maxlength="255" value="<?php echo ( plugin_config_get( 'jbr_server' )) ?>">:<input tabindex="6" type="text" name="jbr_port" size="2" maxlength="4" value="<?php echo ( plugin_config_get( 'jbr_port' )) ?>">
+			<input tabindex="6" type="text" name="jbr_server" size="30" maxlength="255" value="<?php echo plugin_config_get( 'jbr_server' ) ?>">:<input tabindex="6" type="text" name="jbr_port" size="2" maxlength="4" value="<?php echo plugin_config_get( 'jbr_port' ) ?>">
 		</td>
 	</tr>
 	<tr <?php echo helper_alternate_class() ?>>
@@ -58,7 +58,7 @@ print_manage_menu();
 			<?php echo plugin_lang_get( 'config_jabber_timeout' ) ?>
 		</td>
 		<td class="left">
-			<input tabindex="6" type="text" name="jbr_timeout" size="40" maxlength="255" value="<?php echo ( plugin_config_get( 'jbr_timeout' )) ?>">
+			<input tabindex="6" type="text" name="jbr_timeout" size="40" maxlength="255" value="<?php echo plugin_config_get( 'jbr_timeout' ) ?>">
 		</td>
 	</tr>
 	<tr <?php echo helper_alternate_class() ?>>
@@ -66,7 +66,7 @@ print_manage_menu();
 			<?php echo plugin_lang_get( 'config_jabber_login' ) ?>
 		</td>
 		<td class="left">
-			<input tabindex="6" type="text" name="jbr_login" size="40" maxlength="255" value="<?php echo ( plugin_config_get( 'jbr_login' )) ?>">
+			<input tabindex="6" type="text" name="jbr_login" size="40" maxlength="255" value="<?php echo plugin_config_get( 'jbr_login' ) ?>">
 		</td>
 	</tr>
 	<tr <?php echo helper_alternate_class() ?>>
@@ -74,7 +74,7 @@ print_manage_menu();
 			<?php echo plugin_lang_get( 'config_jabber_pwd' ) ?>
 		</td>
 		<td class="left">
-			<input tabindex="6" type="password" name="jbr_pwd" size="40" maxlength="255" value="<?php echo ( plugin_config_get( 'jbr_pwd' )) ?>">
+			<input tabindex="6" type="password" name="jbr_pwd" size="40" maxlength="255" value="<?php echo plugin_config_get( 'jbr_pwd' ) ?>">
 		</td>
 	</tr>
 </table>
@@ -126,7 +126,7 @@ print_manage_menu();
 		</td>
 	</tr>
 </table>
-	
+
 <table align="center" class="width50" cellspacing="1" style="border-bottom:none;">
 	<tr>
 		<td class="form-title" colspan="3">
@@ -161,7 +161,7 @@ print_manage_menu();
 			<label><input type="radio" name="send_mes_move_bug" value="0" <?php echo ( OFF == plugin_config_get( 'send_mes_move_bug' ) ) ? 'checked="checked" ' : ''?>/>
 				<?php echo plugin_lang_get( 'disabled' ) ?></label>
 		</td>
-	</tr>	
+	</tr>
 	<tr <?php echo helper_alternate_class() ?>>
 		<td class="category">
 			<?php echo plugin_lang_get( 'send_del_bug' ) ?>

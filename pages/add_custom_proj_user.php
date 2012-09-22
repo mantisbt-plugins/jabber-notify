@@ -1,9 +1,9 @@
 <?php
 /*
    Copyright 2012 Nikitin Artem (AcanthiS)
-   
-	E-Mail : acanthis@ya.ru
-	ICQ    : 411746920
+
+  E-Mail : acanthis@ya.ru
+  ICQ    : 411746920
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -21,23 +21,23 @@
 auth_reauthenticate();
 access_ensure_global_level( config_get( 'manage_plugin_threshold' ) );
 
-$user_id       =  gpc_get_string( 'user_id', '' );
-$f_proj_id	   = gpc_get_int_array( 'project_id', array() );
-$proj_table    = plugin_table('user_proj', 'JabberNotifierSystem');
+$user_id = gpc_get_string( 'user_id', '' );
+$f_proj_id = gpc_get_int_array( 'project_id', array() );
+$proj_table = plugin_table( 'user_proj', 'JabberNotifierSystem' );
 $query_proj_id = "SELECT proj_id FROM $proj_table WHERE user_id = $user_id;";
-$res_proj_id   = db_query($query_proj_id);
+$res_proj_id = db_query( $query_proj_id );
 
-while($row_proj_id = db_fetch_array($res_proj_id)) {
-	$source_arr = explode(',',$row_proj_id['proj_id']); 
+while( $row_proj_id = db_fetch_array( $res_proj_id ) ) {
+  $source_arr = explode( ',', $row_proj_id['proj_id'] );
 }
 
 foreach( $f_proj_id as $t_proj_id ) {
-			array_push($source_arr, $t_proj_id);
+  array_push( $source_arr, $t_proj_id );
 }
 
-$proj_id   = implode( ',', $source_arr );
+$proj_id = implode( ',', $source_arr );
 $res_query = "UPDATE $proj_table SET proj_id = \"$proj_id\" WHERE user_id = $user_id;";
-db_query($res_query);
-	
+db_query( $res_query );
+
 print_successful_redirect( plugin_page( 'config_custom_proj_user', true ) );
 ?>

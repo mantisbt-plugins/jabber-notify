@@ -21,19 +21,19 @@
 auth_reauthenticate();
 access_ensure_global_level( config_get( 'manage_plugin_threshold' ) );
 
-$f_user_id	= gpc_get_int_array( 'user_id', array() );
+$f_user_id = gpc_get_int_array( 'user_id', array() );
 $xmpp_table = plugin_table( 'xmpp_login', 'JabberNotifierSystem' );
 $user_table = db_get_table( 'mantis_user_table' );
-	
+
 foreach( $f_user_id as $t_user_id ) {
-	$username_query = "SELECT username FROM $user_table WHERE id = $t_user_id;";
-	$res            = db_query($username_query);
-		while($row = db_fetch_array($res)) {
-			 $xmpp_login = strtolower($row['username']);
-		}
-	$add_user_query = "INSERT INTO $xmpp_table (user_id, xmpp_login, chng_login) VALUES ($t_user_id, \"$xmpp_login\", 0);";
-	db_query($add_user_query);
+  $username_query = "SELECT username FROM $user_table WHERE id = $t_user_id;";
+  $res = db_query( $username_query );
+  while( $row = db_fetch_array( $res ) ) {
+    $xmpp_login = strtolower( $row['username'] );
+  }
+  $add_user_query = "INSERT INTO $xmpp_table (user_id, xmpp_login, chng_login) VALUES ($t_user_id, \"$xmpp_login\", 0);";
+  db_query( $add_user_query );
 }
-	
+
 print_successful_redirect( plugin_page( 'config_xmpp_login', true ) );
 ?>
