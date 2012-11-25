@@ -1,7 +1,7 @@
-﻿# Jabber Notify System (JNS)
+## Jabber Notify System (JNS)
 Copyright (C) 2012 Nikitin Artem
 
-## Описание
+### Описание
 Данный плагин предназначен для отправки сообщений по протоколу [XMPP](http://ru.wikipedia.org/wiki/XMPP).
 
 На данный момент доступна отправка уведомлений инициаторам инцидентов при следующих событиях:
@@ -28,7 +28,15 @@ Copyright (C) 2012 Nikitin Artem
 * при изменении статуса на 'отработан'
 * при изменении статуса на 'закрыт'
 
-## Скриншоты
+### Установка
+  1. Создайте папку JabberNotifierSystem по пути: MantisBT_Root_Folder/plugins/
+  1. Распокуйте содержимое плагина в вышесозданную папку (MantisBT_Root_Folder/plugins/JabberNotifierSystem)
+  3. Передите на страницу плагинов: `/manage_plugin_page.php`
+  4. Установите плагин
+  5. Передите на страницу настроек плагина: `plugin.php?page=JabberNotifierSystem/config_main`
+  6. Enjoy!
+
+### Скриншоты
 Основные настройки плагина
 ![Основные настройки плагина](https://github.com/mantisbt-plugins/jabber-notify/blob/master/screenshot-1.png?raw=true)
 
@@ -37,3 +45,8 @@ Copyright (C) 2012 Nikitin Artem
 
 Управление выборочной отправкой
 ![Управление выборочной отправкой](https://github.com/mantisbt-plugins/jabber-notify/blob/master/screenshot-3.png?raw=true)
+
+### Контакты
+e-mail: acanthis83@gmail.com
+
+icq: 411746920
