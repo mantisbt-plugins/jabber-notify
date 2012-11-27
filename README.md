@@ -29,7 +29,7 @@ Copyright (C) 2012 Nikitin Artem
 * при изменении статуса на 'закрыт'
 
 ### Установка
-  1. Создайте папку JabberNotifierSystem по пути: MantisBT_Root_Folder/plugins/
+  1. Создайте папку JabberNotifierSystem по пути: `MantisBT_Root_Folder/plugins/`
   1. Распокуйте содержимое плагина в вышесозданную папку (MantisBT_Root_Folder/plugins/JabberNotifierSystem)
   3. Перейдите на страницу плагинов: `/manage_plugin_page.php`
   4. Установите плагин
