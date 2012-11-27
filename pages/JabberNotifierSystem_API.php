@@ -71,7 +71,7 @@ function get_username( $user_id ) {
   * Check user from projects table.
   */
  function check_user_from_projects_table( $bug_id ) {
-   $user_id 		= bug_get_field( $bug_id, 'reporter_id' );
+   $user_id	    = bug_get_field( $bug_id, 'reporter_id' );
    $proj_id         = bug_get_field( $bug_id, 'project_id' );
    $user_proj_table = plugin_table( 'user_proj', 'JabberNotifierSystem' );
    $query           = "SELECT proj_id FROM $user_proj_table WHERE user_id = $user_id LIMIT 1;";
@@ -84,6 +84,7 @@ function get_username( $user_id ) {
 		else
 			return false;
    }
+   return true;
  }
 
 /**
