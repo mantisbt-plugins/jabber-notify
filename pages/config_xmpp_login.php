@@ -113,7 +113,7 @@ if ( db_num_rows( $res ) == 0 ) {
 			$can_change = $row['chng_login'] == 1 ? 'checked="CHECKED"' : null;
 	?>
 	<tr  <?php echo helper_alternate_class() ?> style="<?php echo $user_color_style ?>">
-		<td> <?php echo "<a href=" . $g_path . "manage_user_edit_page.php?user_id=$user_id\" target=\"_blank\">" . get_username( $user_id ) . "</a>" ?></td>
+		<td> <?php echo "<a href=" . $g_path . "manage_user_edit_page.php?user_id=$user_id target=\"_blank\">" . get_username( $user_id ) . "</a>" ?></td>
 		<td width="40%"> <?php echo $row['xmpp_login'] . '@' . plugin_config_get( 'jbr_server' ); ?></td>
 		<td class="center" width="20%">
 		<form action="<?php echo plugin_page( 'edit_xmpp_login_page.php' ) ?>" method="post">

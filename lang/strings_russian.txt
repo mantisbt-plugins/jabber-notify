@@ -72,7 +72,6 @@ $s_plugin_JabberNotifierSystem_send_mes_attach_tags = 'Уведомлять пр
 # Quick send notifier setting strings 
 $s_plugin_JabberNotifierSystem_config_view        = 'Настройка быстрой отправки сообщения';
 $s_plugin_JabberNotifierSystem_add_send_quick_msg = 'Добавить быструю отправку в инцидент';
-$s_plugin_JabberNotifierSystem_add_send_quick_msg = 'Отправить сообщение инициатору в Jabber';
 
 # Change Jabber login setting strings
 $s_plugin_JabberNotifierSystem_edit_xmpp_user         = 'Настройка изменения Jabber логина';
