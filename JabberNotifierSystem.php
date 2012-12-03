@@ -68,7 +68,7 @@ class JabberNotifierSystemPlugin extends MantisPlugin {
    */
   function init() {
     require_once( 'pages/JabberNotifierSystem_API.php' );
-    plugin_file( 'XMPPHP/XMPP.php' );
+    require_once( 'XMPPHP/XMPP.php' );
   }
 
   /**
