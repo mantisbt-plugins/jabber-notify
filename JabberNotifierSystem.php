@@ -28,6 +28,7 @@ class JabberNotifierSystemPlugin extends MantisPlugin {
     $this->requires    = array('MantisCore' => '1.2.0',);
     $this->author      = 'AcanthiS';
     $this->contact     = 'acanthis@ya.ru';
+    $this->url         = 'https://github.com/mantisbt-plugins/jabber-notify';
   }
 
   /**
