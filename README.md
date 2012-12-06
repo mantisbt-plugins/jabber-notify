@@ -1,4 +1,4 @@
-## Jabber Notify System (JNS)
+## Jabber Notify System (JNS) (English)
 Copyright (C) 2012 Nikitin Artem
 
 ### Description
@@ -50,8 +50,8 @@ Manage selected sending
 e-mail: acanthis83@gmail.com
 
 icq: 411746920
-
-## Jabber Notify System (JNS)
+###
+## Jabber Notify System (JNS) (Русский)
 Copyright (C) 2012 Nikitin Artem
 
 ### Описание
