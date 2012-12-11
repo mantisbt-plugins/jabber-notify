@@ -1,0 +1,199 @@
+<?php
+/*
+   Copyright 2012 Nikitin Artem (AcanthiS)
+   
+  E-Mail : acanthis@ya.ru
+	ICQ    : 411746920
+
+   This is a crude English translation by Zero SiX
+   
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+*/
+
+ /**
+  * Main plugin strings
+  */
+$s_plugin_JabberNotifierSystem_title       = 'Jabber Notifier System';
+$s_plugin_JabberNotifierSystem_description = 'The system of notifications over XMPP';
+
+ /**
+  * Menu plugin links
+  */ 
+$s_plugin_JabberNotifierSystem_main_plugin_config 			  = 'Basic settings';
+$s_plugin_JabberNotifierSystem_xmpp_plugin_config             = 'Solo Jabber login';
+$s_plugin_JabberNotifierSystem_custom_proj_user_plugin_config = 'Selective sending management';
+
+ /**
+  * Main config strings
+  */ 
+# Jabber setting strings 
+$s_plugin_JabberNotifierSystem_config_jabber         = 'Configure Jabber server';
+$s_plugin_JabberNotifierSystem_config_jabber_server  = 'Name or IP address of the server: port for Jabber';
+$s_plugin_JabberNotifierSystem_config_jabber_timeout = 'The server connection timeout (sec)';
+$s_plugin_JabberNotifierSystem_config_jabber_login   = 'Login to send messages';
+$s_plugin_JabberNotifierSystem_config_jabber_pwd     = 'The password of the user to send messages';
+$s_plugin_JabberNotifierSystem_config_jabber_ex_srv  = 'Example: jabber.org:5222';
+
+# Send notifier setting strings 
+$s_plugin_JabberNotifierSystem_send_msg          = 'Configuring listing incidents';
+$s_plugin_JabberNotifierSystem_send_new_bugnote  = 'Notify me when you add comment';
+$s_plugin_JabberNotifierSystem_send_edit_bugnote = 'Notify on change comment';
+$s_plugin_JabberNotifierSystem_send_del_bugnote  = 'Notify when deleting a comment';
+
+# Send actions notifier setting strings 
+$s_plugin_JabberNotifierSystem_action_notif_setting = 'Configuring listing with multiple handling of incidents';
+$s_plugin_JabberNotifierSystem_send_new_resp        = 'Notify me when a new responsible ';
+$s_plugin_JabberNotifierSystem_send_new_resp_com    = 'Notify the initiator, and a new and responsible';
+$s_plugin_JabberNotifierSystem_send_move_bugnote    = 'Notify when an incident';
+$s_plugin_JabberNotifierSystem_send_del_bug         = 'Notify when an incident';
+$s_plugin_JabberNotifierSystem_send_new_state_10    = 'Notify me when you change the status to \'new\'';
+$s_plugin_JabberNotifierSystem_send_new_state_20 	= 'Notify me when you change the status to \'need a response\'';
+$s_plugin_JabberNotifierSystem_send_new_state_30 	= 'Notify me when you change the status to \'reviewed by\'';
+$s_plugin_JabberNotifierSystem_send_new_state_40 	= 'Notify me when you change the status to \'confirmed\'';
+$s_plugin_JabberNotifierSystem_send_new_state_50 	= 'Notify me when you change the status to \'assigned\'';
+$s_plugin_JabberNotifierSystem_send_new_state_80 	= 'Notify me when you change the status to \'the Association developed\'';
+$s_plugin_JabberNotifierSystem_send_new_state_90 	= 'Notify me when you change the status to \'closed\'';
+$s_plugin_JabberNotifierSystem_send_mes_up_prior 	= 'Notify on change priority';
+$s_plugin_JabberNotifierSystem_send_mes_up_severity = 'Notify on change severity';
+$s_plugin_JabberNotifierSystem_send_mes_up_status 	= 'Notify on change status';
+$s_plugin_JabberNotifierSystem_send_mes_up_category = 'Notify on change category';
+$s_plugin_JabberNotifierSystem_send_mes_up_view 	= 'Notify on change visibility';
+$s_plugin_JabberNotifierSystem_send_mes_add_note 	= 'Notify me when you add comment';
+$s_plugin_JabberNotifierSystem_send_mes_attach_tags = 'Notify me when adding tags';
+
+# Quick send notifier setting strings 
+$s_plugin_JabberNotifierSystem_config_view        = 'Configure fast sending messages';
+$s_plugin_JabberNotifierSystem_add_send_quick_msg = 'Add the quickflow in incident';
+
+# Change Jabber login setting strings
+$s_plugin_JabberNotifierSystem_edit_xmpp_user         = 'Configure Jabber login changes';
+$s_plugin_JabberNotifierSystem_change_user_xmpp_login = 'Allow user to change your Jabber login';
+$s_plugin_JabberNotifierSystem_xmpp_login_warn        = 'Login should consist of Latin characters';
+
+ /**
+  * Custom Jabber logins strings
+  */ 
+# Add login setting strings 
+$s_plugin_JabberNotifierSystem_config_add_jabber_user = 'Add users for individual Jabber login';
+
+# Custom Jabber login setting strings 
+$s_plugin_JabberNotifierSystem_config_jabber_login_list = 'Users with personal Jabber login';
+$s_plugin_JabberNotifierSystem_xmpp_login               = 'Jabber login';
+$s_plugin_JabberNotifierSystem_disabled_chanche_login   = 'Cannot change login';
+
+ /**
+  * User management and project management for custom notifications
+  */ 
+# Add users and projects setting strings 
+$s_plugin_JabberNotifierSystem_config_manage_users            = 'Adding users and projects to selectively send';
+$s_plugin_JabberNotifierSystem_manage_custom_proj_title       = 'Managing users and projects to selectively send *';
+$s_plugin_JabberNotifierSystem_manage_custom_proj_warning_msg = '* Users that are not in the table get their message across all projects';
+$s_plugin_JabberNotifierSystem_config_manage_users_proj       = 'Projects in which the user will receive a message';
+$s_plugin_JabberNotifierSystem_add_projects                   = 'Adding projects';
+
+ /**
+  * Buttons strings
+  */ 
+$s_plugin_JabberNotifierSystem_enabled                    = 'Enabled';
+$s_plugin_JabberNotifierSystem_disabled                   = 'Disabled';
+$s_plugin_JabberNotifierSystem_ok                         = 'Ok';
+$s_plugin_JabberNotifierSystem_del_btn_txt                = 'Delete';
+$s_plugin_JabberNotifierSystem_change_btn_txt             = 'Change';
+$s_plugin_JabberNotifierSystem_add_btn_txt                = 'Add';
+$s_plugin_JabberNotifierSystem_del_xmpp_user_msg_btn_txt  = 'Delete a user';
+$s_plugin_JabberNotifierSystem_add_projects_btn_txt       = 'Add Project (s)';
+$s_plugin_JabberNotifierSystem_edit_xmpp_user_msg_btn_txt = 'Change Jabber login';
+$s_plugin_JabberNotifierSystem_send_msg_btn_txt           = 'Send';
+
+ /**
+  * Table strings
+  */ 
+$s_plugin_JabberNotifierSystem_user         = 'User';
+$s_plugin_JabberNotifierSystem_config_users = 'Users';
+$s_plugin_JabberNotifierSystem_projects     = 'Projects';
+$s_plugin_JabberNotifierSystem_action       = 'Action';
+$s_plugin_JabberNotifierSystem_xmpp_login   = 'Jabber login'; 
+
+ /**
+  * Messages strings
+  */ 
+$s_plugin_JabberNotifierSystem_err_add_proj           = 'The user added all the projects.';
+$s_plugin_JabberNotifierSystem_cust_prj_usr_del_quest = 'Are you sure you want to remove a user from a custom submit button?';
+$s_plugin_JabberNotifierSystem_act_delete_xmpp_user   = 'Are you sure you want to delete the Jabber user login?';
+$s_plugin_JabberNotifierSystem_operation_successful   = 'The operation completed successfully';
+$s_plugin_JabberNotifierSystem_msg_send_successful    = 'Message sent successfully';
+$s_plugin_JabberNotifierSystem_msg_send_error         = 'Error sending message';
+
+ /**
+  * Notifications strings
+  */ 
+$s_plugin_JabberNotifierSystem_separator = '---------------------------------------------------------------------------------';
+
+# Coment strings
+$s_plugin_JabberNotifierSystem_msg_action_bugnote_add   = 'In your incident was added a comment.';
+$s_plugin_JabberNotifierSystem_msg_action_bugnote_edit  = 'In your incident has been changed comment.';
+$s_plugin_JabberNotifierSystem_msg_action_bugnote_del   = 'In your incident has been deleted comment.';
+$s_plugin_JabberNotifierSystem_msg_note_change          = 'Comment (edited): ';
+$s_plugin_JabberNotifierSystem_msg_note                 = 'Comment: ';
+$s_plugin_JabberNotifierSystem_msg_note_id              = 'Comment ID: ';
+$s_plugin_JabberNotifierSystem_msg_link_note            = 'Comment:';
+$s_plugin_JabberNotifierSystem_msg_link_change_note     = 'Link to the modified comment:';
+
+# Quick message strings
+$s_plugin_JabberNotifierSystem_msg_action_send_quick_msg = 'You have been sent a quick message.';
+$s_plugin_JabberNotifierSystem_msg_quick_msg             = 'Post:';
+
+# Delete issue strings
+$s_plugin_JabberNotifierSystem_msg_action_bug_del = 'Your incident has been deleted.';
+
+# Close issue strings
+$s_plugin_JabberNotifierSystem_msg_action_bug_close = 'Your incident has been awarded the status of "closed.';
+
+# Move issue strings 
+$s_plugin_JabberNotifierSystem_msg_action_bug_move = 'Your incident has been moved.';
+$s_plugin_JabberNotifierSystem_msg_move_proj       = 'Moved to project:';
+
+# Resolve issue strings 
+$s_plugin_JabberNotifierSystem_msg_action_bug_resolve = 'Your incident has been awarded the status of "Developed".';
+$s_plugin_JabberNotifierSystem_msg_resolution         = 'Resolved:';
+
+# Assign issue strings 
+$s_plugin_JabberNotifierSystem_msg_action_bug_assign_in  = 'Your incident is appointed as the new Manager.';
+$s_plugin_JabberNotifierSystem_msg_action_bug_assign_out = 'You are responsible for the incident.';
+
+# Update priority issue strings 
+$s_plugin_JabberNotifierSystem_msg_action_bug_up_prior     = 'In your modified incident priority.';
+$s_plugin_JabberNotifierSystem_msg_action_bug_up_prior_str = 'New priority:';
+
+# Update status issue strings 
+$s_plugin_JabberNotifierSystem_msg_action_bug_up_status     = 'Status of your incident has been changed.';
+$s_plugin_JabberNotifierSystem_msg_action_bug_up_status_str = 'New status:';
+
+# Update category issue strings 
+$s_plugin_JabberNotifierSystem_msg_action_bug_up_category     = 'Category of your incident has been changed.';
+$s_plugin_JabberNotifierSystem_msg_action_bug_up_category_str = 'New category:';
+
+# Update view status issue strings 
+$s_plugin_JabberNotifierSystem_msg_action_bug_up_view     = 'Visibility of your incident has been changed.';
+$s_plugin_JabberNotifierSystem_msg_action_bug_up_view_str = 'New visibility:';
+
+# Other strings
+$s_plugin_JabberNotifierSystem_msg_call       = 'Dear';
+$s_plugin_JabberNotifierSystem_msg_bug_id     = 'Incident ID:';
+$s_plugin_JabberNotifierSystem_msg_proj_id    = 'Project:';
+$s_plugin_JabberNotifierSystem_msg_state      = 'Status:';
+$s_plugin_JabberNotifierSystem_msg_header     = 'The essence of the task:';
+$s_plugin_JabberNotifierSystem_msg_assign     = 'New Executive:';
+$s_plugin_JabberNotifierSystem_msg_initiator  = 'The Initiator:';
+$s_plugin_JabberNotifierSystem_msg_link_bug   = 'A reference to an incident:';
+?>
