@@ -38,13 +38,13 @@ And send notification for **multiply** action with issues:
 
 ### Screenshots
 Main options page
-![Main options page](https://github.com/mantisbt-plugins/jabber-notify/blob/master/screensots/screenshot-en-1.png?raw=true)
+![Main options page](https://github.com/mantisbt-plugins/jabber-notify/blob/master/screenshots/screenshot-en-1.png?raw=true)
 
 Configuration Jabber logins
-![Configuration Jabber logins](https://github.com/mantisbt-plugins/jabber-notify/blob/master/screensots/screenshot-en-2.png?raw=true)
+![Configuration Jabber logins](https://github.com/mantisbt-plugins/jabber-notify/blob/master/screenshots/screenshot-en-2.png?raw=true)
 
 Manage selected sending
-![Manage selected sending](https://github.com/mantisbt-plugins/jabber-notify/blob/master/screensots/screenshot-en-3.png?raw=true)
+![Manage selected sending](https://github.com/mantisbt-plugins/jabber-notify/blob/master/screenshots/screenshot-en-3.png?raw=true)
 
 ### Contacts
 e-mail: acanthis83@gmail.com
@@ -91,13 +91,13 @@ Copyright (C) 2012 Nikitin Artem
 
 ### Скриншоты
 Основные настройки плагина
-![Основные настройки плагина](https://github.com/mantisbt-plugins/jabber-notify/blob/master/screensots/screenshot-en-1.png?raw=true)
+![Основные настройки плагина](https://github.com/mantisbt-plugins/jabber-notify/blob/master/screenshots/screenshot-en-1.png?raw=true)
 
 Настройки Jabber логинов
-![Настройки Jabber логинов](https://github.com/mantisbt-plugins/jabber-notify/blob/master/screensots/screenshot-en-2.png?raw=true)
+![Настройки Jabber логинов](https://github.com/mantisbt-plugins/jabber-notify/blob/master/screenshots/screenshot-en-2.png?raw=true)
 
 Управление выборочной отправкой
-![Управление выборочной отправкой](https://github.com/mantisbt-plugins/jabber-notify/blob/master/screensots/screenshot-en-3.png?raw=true)
+![Управление выборочной отправкой](https://github.com/mantisbt-plugins/jabber-notify/blob/master/screenshots/screenshot-en-3.png?raw=true)
 
 ### Контакты
 e-mail: acanthis83@gmail.com
