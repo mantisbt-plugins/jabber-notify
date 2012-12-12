@@ -29,7 +29,7 @@ html_page_top2();
 <hr size="1" width="50%" />
 <?php echo plugin_lang_get( 'cust_prj_usr_del_quest' ) ?>
 <br>
-<?php echo plugin_lang_get( 'user' ) ?> : <?php echo user_get_realname(gpc_get_string( 'user_id', '' ))?><br>
+<?php echo plugin_lang_get( 'user' ) ?> : <?php echo get_username(gpc_get_string( 'user_id', '' ))?><br>
 <form method="post" action="<?php echo plugin_page( 'delete_custom_proj_user.php' ) ?>">
 <input type="hidden" name="user_id" value="<?php echo gpc_get_string( 'user_id', '' ) ?>"/><br>
 <input type="submit" class="button" value="<?php echo plugin_lang_get( 'del_xmpp_user_msg_btn_txt' ) ?>" />

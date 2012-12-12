@@ -28,6 +28,7 @@ class JabberNotifierSystemPlugin extends MantisPlugin {
     $this->requires    = array('MantisCore' => '1.2.0',);
     $this->author      = 'AcanthiS';
     $this->contact     = 'acanthis@ya.ru';
+    $this->url         = 'https://github.com/mantisbt-plugins/jabber-notify';
   }
 
   /**
@@ -40,7 +41,7 @@ class JabberNotifierSystemPlugin extends MantisPlugin {
       'jbr_timeout'            => '20',
       'jbr_login'              => '',
       'jbr_pwd'                => '',
-      'add_send_quick_msg'     => ON,
+      'add_send_quick_msg'     => OFF,
       'change_xmpp_login'      => OFF,
       'send_mes_new_bugnote'   => ON,
       'send_mes_edit_bugnote'  => ON,
@@ -68,7 +69,7 @@ class JabberNotifierSystemPlugin extends MantisPlugin {
    */
   function init() {
     require_once( 'pages/JabberNotifierSystem_API.php' );
-    plugin_file( 'XMPPHP/XMPP.php' );
+    require_once( 'XMPPHP/XMPP.php' );
   }
 
   /**

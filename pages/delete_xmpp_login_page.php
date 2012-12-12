@@ -29,7 +29,7 @@ html_page_top2();
 <hr size="1" width="50%" />
 <?php echo plugin_lang_get( 'act_delete_xmpp_user' ) ?>
 <br><br>
-<?php echo plugin_lang_get( 'user' ) ?> : <?php echo user_get_realname( gpc_get_string( 'user_id', '' ) )?><br>
+<?php echo plugin_lang_get( 'user' ) ?> : <?php echo get_username( gpc_get_string( 'user_id', '' ) )?><br>
 <?php echo plugin_lang_get( 'xmpp_login' ) ?> : <?php echo gpc_get_string( 'xmpp_login', '' )?>
 <form method="post" action="<?php echo plugin_page( 'delete_xmpp_login' ) ?>">
 <input type="hidden" name="user_id" value="<?php echo gpc_get_string( 'user_id', '' ) ?>"/><br><br>

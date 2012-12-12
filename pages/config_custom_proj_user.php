@@ -130,7 +130,7 @@ if ( db_num_rows($res) == 0 ) {
 				}
 	?>
 	<tr <?php echo helper_alternate_class() ?>>
-		<td> <?php echo "<a href=" . $g_path . "manage_user_edit_page.php?user_id=$user_id\" target=\"_blank\">" . $user_name . "</a>" ?> </td>
+		<td> <?php echo "<a href=" . $g_path . "manage_user_edit_page.php?user_id=$user_id target=\"_blank\">" . $user_name . "</a>" ?> </td>
 		<td class="center">
 			<?php
 				$arr = explode( ',', $row['proj_id'] );

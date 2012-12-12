@@ -35,7 +35,7 @@ html_page_top2();
 <tr class="row-1">
 	<td class="category" width="30%"><?php echo plugin_lang_get( 'user' ) ?></td>
 	<td width="70%">
-		<?php echo user_get_realname(gpc_get_string( 'user_id', '' ))?>
+		<?php echo get_username(gpc_get_string( 'user_id', '' ))?>
 		<input type="hidden" name="user_id" value="<?php echo gpc_get_string( 'user_id', '' ) ?>"/>
 	</td>
 </tr>
