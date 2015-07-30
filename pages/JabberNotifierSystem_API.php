@@ -215,13 +215,20 @@ function gen_quick_msg( $user_id, $bug_id, $quick_msg ) {
   * Gen create bug message.
   */
 function gen_add_bug_msg( $user_id, $bug_id) {
-  $send_msg = plugin_lang_get( 'msg_call' ) . ' ' . get_username( $user_id ) . '! ' . plugin_lang_get( 'msg_action_bug_add' ) . "\n" .
+  /*$send_msg = plugin_lang_get( 'msg_call' ) . ' ' . get_username( $user_id ) . '! ' . plugin_lang_get( 'msg_action_bug_add' ) . "\n" .
   plugin_lang_get( 'msg_bug_id' ) . ' ' . bug_format_id( $bug_id, 'category_id' ) . "\n" .
   plugin_lang_get( 'msg_proj_id' ) . ' ' . project_get_name( bug_get_field( $bug_id, 'project_id' ) ) . "\n" .
   plugin_lang_get( 'msg_initiator' ) . ' ' . get_username(bug_get_field( $bug_id, 'reporter_id' )) . "\n" .
   plugin_lang_get( 'msg_header' ) . ' ' . bug_get_field( $bug_id, 'summary' ) . "\n" .
   plugin_lang_get( 'separator' ) . "\n" .
-  plugin_lang_get( 'msg_link_bug' ) . ' ' . get_bug_link( $bug_id );
+  plugin_lang_get( 'msg_link_bug' ) . ' ' . get_bug_link( $bug_id );*/
+  $project_id=bug_get_field( $bug_id, 'project_id' );
+  $send_msg= '[b]'.plugin_lang_get( 'msg_action_bug_add' ) .':[/b] '. get_bug_link( $bug_id ) ."\n" .
+  '[b]'.plugin_lang_get( 'msg_initiator' ) . '[/b] ' . get_username(bug_get_field( $bug_id, 'reporter_id' )) . "\n" .
+  '[b]'.plugin_lang_get( 'msg_proj_id' ) . '[/b] ' . project_get_name( $project_id ) . "\n" .
+  '[b]'.plugin_lang_get( 'msg_header' ) . '[/b] ' . bug_get_field( $bug_id, 'summary' ). "\n" .
+  '[b]'.plugin_lang_get( 'msg_description' ) . '[/b] ' . bug_get( $bug_id, true )->description;
+
   return $send_msg;
 }
 
