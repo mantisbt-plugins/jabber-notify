@@ -44,6 +44,7 @@ $s_plugin_JabberNotifierSystem_config_jabber_ex_srv  = 'Пример: jabber.org
 
 # Send notifier setting strings 
 $s_plugin_JabberNotifierSystem_send_msg          = 'Настройка уведомлений инициаторам инцидентов';
+$s_plugin_JabberNotifierSystem_send_new_bug  = 'Уведомлять при создании заявки';
 $s_plugin_JabberNotifierSystem_send_new_bugnote  = 'Уведомлять при добавлении коментария';
 $s_plugin_JabberNotifierSystem_send_edit_bugnote = 'Уведомлять при изменении коментария';
 $s_plugin_JabberNotifierSystem_send_del_bugnote  = 'Уведомлять при удалении коментария';
@@ -71,7 +72,7 @@ $s_plugin_JabberNotifierSystem_send_mes_attach_tags = 'Уведомлять пр
 
 # Quick send notifier setting strings 
 $s_plugin_JabberNotifierSystem_config_view        = 'Настройка быстрой отправки сообщения';
-$s_plugin_JabberNotifierSystem_add_send_quick_msg = 'Добавить быструю отправку в инцидент';
+$s_plugin_JabberNotifierSystem_add_send_quick_msg = 'Отправить сообщение в Jabber инициатору';
 
 # Change Jabber login setting strings
 $s_plugin_JabberNotifierSystem_edit_xmpp_user         = 'Настройка изменения Jabber логина';
@@ -138,6 +139,7 @@ $s_plugin_JabberNotifierSystem_msg_send_error         = 'Ошибка при о�
 $s_plugin_JabberNotifierSystem_separator = '---------------------------------------------------------------------------------';
 
 # Coment strings
+$s_plugin_JabberNotifierSystem_msg_action_bug_add   = 'Создана новая заявка';
 $s_plugin_JabberNotifierSystem_msg_action_bugnote_add   = 'В Вашем инциденте был добавлен комментарий.';
 $s_plugin_JabberNotifierSystem_msg_action_bugnote_edit  = 'В Вашем инциденте был изменён комментарий.';
 $s_plugin_JabberNotifierSystem_msg_action_bugnote_del   = 'В Вашем инциденте был удалён комментарий.';
@@ -190,8 +192,10 @@ $s_plugin_JabberNotifierSystem_msg_call       = 'Уважаемый(ая)';
 $s_plugin_JabberNotifierSystem_msg_bug_id     = 'ID инцидента:';
 $s_plugin_JabberNotifierSystem_msg_proj_id    = 'Проект:';
 $s_plugin_JabberNotifierSystem_msg_state      = 'Статус:';
-$s_plugin_JabberNotifierSystem_msg_header     = 'Суть задачи:';
+$s_plugin_JabberNotifierSystem_msg_header     = 'Тема:';
 $s_plugin_JabberNotifierSystem_msg_assign     = 'Новый ответственный:';
 $s_plugin_JabberNotifierSystem_msg_initiator  = 'Инициатор:';
 $s_plugin_JabberNotifierSystem_msg_link_bug   = 'Ссылка на инцидент:';
+$s_plugin_JabberNotifierSystem_msg_description= 'Подробности:';
+
 ?>
