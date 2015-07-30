@@ -93,11 +93,10 @@ function get_username( $user_id ) {
 function send_msg( $jbr_user, $msg ) {
   $conn = new XMPPHP_XMPP( plugin_config_get( 'jbr_server' ), plugin_config_get( 'jbr_port' ), plugin_config_get( 'jbr_login' ), plugin_config_get( 'jbr_pwd' ), 'xmpphp', plugin_config_get( 'jbr_server' ), $printlog = False, $loglevel = 'LOGGING_INFO' );
     //$conn->useEncryption(false); //Enable this line if you get a error "Fatal error: Cannot access protected property XMPPHP_XMPP::$use_encryption"
-
   try {
     $conn->connect( $timeout = plugin_config_get( 'jbr_timeout' ) );
     $conn->processUntil( 'session_start' );
-    $conn->message( $jbr_user . '@' . plugin_config_get( 'jbr_server' ), $msg );
+    $conn->message( $jbr_user . '@' . get_server_adr($jbr_user), $msg);
     $conn->disconnect();
   }
   catch( XMPPHP_Exception $e ) {
@@ -110,12 +109,11 @@ function send_msg( $jbr_user, $msg ) {
   */
 function send_quick_msg( $jbr_user, $msg, $bug_id ) {
   $conn = new XMPPHP_XMPP( plugin_config_get( 'jbr_server' ), plugin_config_get( 'jbr_port' ), plugin_config_get( 'jbr_login' ), plugin_config_get( 'jbr_pwd' ), 'xmpphp', plugin_config_get( 'jbr_server' ), $printlog = False, $loglevel = 'LOGGING_INFO' );
-  //$conn->useEncryption(false); //Enable this line if you get a error "Fatal error: Cannot access protected property XMPPHP_XMPP::$use_encryption"
-
+  //$conn->useEncryption(false); //Enable this line if you get a error "Fatal error: Cannot access protected property XMPPHP_XMPP::$use_encryption"  
   try {
     $conn->connect( $timeout = plugin_config_get( 'jbr_timeout' ) );
     $conn->processUntil( 'session_start' );
-    $conn->message( $jbr_user . '@' . plugin_config_get( 'jbr_server' ), $msg );
+    $conn->message( $jbr_user . '@' . get_server_adr($jbr_user), $msg);
     $conn->disconnect();
     echo '<center><div align="center" style="width:300px;border: solid 1px;padding:10px;margin-bottom:10px;background-color:#D2F5B0;">';
     echo plugin_lang_get( 'msg_send_successful' );
@@ -129,6 +127,14 @@ function send_quick_msg( $jbr_user, $msg, $bug_id ) {
     echo '</div></center>';
     header( 'Refresh: 3; URL=' . get_bug_link( $bug_id ) );
   }
+}
+
+function get_server_adr($jbr_user)
+{
+	$jbr_svr= plugin_config_get( 'jbr_server' );
+	$email_adr=user_get_email(user_get_id_by_name($jbr_user));
+/*TODO: determinate jabber server by email*/
+	return $jbr_svr;
 }
 
 /**
@@ -147,7 +153,7 @@ function print_quick_msg( $bug_id, $user_id ) {
   echo '<tr class="row-1">';
   echo '<td class="category">'; print plugin_lang_get( 'add_send_quick_msg' );
   echo '<br>';
-  echo '<span class="small">(' . get_xmpp_login( $user_id ) . '@' . plugin_config_get( 'jbr_server' ) . ')</span>';
+  echo '<span class="small">(' . get_xmpp_login( $user_id ) . '@' . get_server_adr(get_xmpp_login( $user_id )) . ')</span>';
   echo '</td>';
   echo '<td colspan="5">';
   echo '<textarea name="quick_msg" cols="40" rows="3"></textarea><br>';
@@ -206,13 +212,27 @@ function gen_quick_msg( $user_id, $bug_id, $quick_msg ) {
 }
 
 /**
+  * Gen create bug message.
+  */
+function gen_add_bug_msg( $user_id, $bug_id) {
+  $send_msg = plugin_lang_get( 'msg_call' ) . ' ' . get_username( $user_id ) . '! ' . plugin_lang_get( 'msg_action_bug_add' ) . "\n" .
+  plugin_lang_get( 'msg_bug_id' ) . ' ' . bug_format_id( $bug_id, 'category_id' ) . "\n" .
+  plugin_lang_get( 'msg_proj_id' ) . ' ' . project_get_name( bug_get_field( $bug_id, 'project_id' ) ) . "\n" .
+  plugin_lang_get( 'msg_initiator' ) . ' ' . get_username(bug_get_field( $bug_id, 'reporter_id' )) . "\n" .
+  plugin_lang_get( 'msg_header' ) . ' ' . bug_get_field( $bug_id, 'summary' ) . "\n" .
+  plugin_lang_get( 'separator' ) . "\n" .
+  plugin_lang_get( 'msg_link_bug' ) . ' ' . get_bug_link( $bug_id );
+  return $send_msg;
+}
+
+
+/**
   * Gen add bugnote message.
   */
 function gen_add_bugnote_msg( $user_id, $bug_id, $bugnote_id ) {
   $send_msg = plugin_lang_get( 'msg_call' ) . ' ' . get_username( $user_id ) . '! ' . plugin_lang_get( 'msg_action_bugnote_add' ) . "\n" .
   plugin_lang_get( 'msg_bug_id' ) . ' ' . bug_format_id( $bug_id, 'category_id' ) . "\n" .
   plugin_lang_get( 'msg_proj_id' ) . ' ' . project_get_name( bug_get_field( $bug_id, 'project_id' ) ) . "\n" .
-  plugin_lang_get( 'msg_state' ) . ' ' . get_enum_element( 'status', ( bug_get_field( $bug_id, 'status' ) ) ) . "\n" .
   plugin_lang_get( 'msg_header' ) . ' ' . bug_get_field( $bug_id, 'summary' ) . "\n" .
   plugin_lang_get( 'separator' ) . "\n" .
   plugin_lang_get( 'msg_note' ) . ' ' . bugnote_get_text( $bugnote_id ) . "\n" .
