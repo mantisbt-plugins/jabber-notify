@@ -88,6 +88,19 @@ print_manage_menu();
 	</tr>
 	<tr <?php echo helper_alternate_class() ?>>
 		<td class="category">
+			<?php echo plugin_lang_get( 'send_new_bug' ) ?>
+		</td>
+		<td class="center" width="10%">
+			<label><input type="radio" name="send_mes_new_bug" value="1" <?php echo ( ON == plugin_config_get( 'send_mes_new_bug' ) ) ? 'checked="checked" ' : ''?>/>
+				<?php echo plugin_lang_get( 'enabled' ) ?></label>
+		</td>
+		<td class="center" width="10%">
+			<label><input type="radio" name="send_mes_new_bug" value="0" <?php echo ( OFF == plugin_config_get( 'send_mes_new_bug' ) ) ? 'checked="checked" ' : ''?>/>
+				<?php echo plugin_lang_get( 'disabled' ) ?></label>
+		</td>
+	</tr>
+	<tr <?php echo helper_alternate_class() ?>>
+		<td class="category">
 			<?php echo plugin_lang_get( 'send_new_bugnote' ) ?>
 		</td>
 		<td class="center" width="10%">

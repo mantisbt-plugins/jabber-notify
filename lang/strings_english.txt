@@ -46,6 +46,7 @@ $s_plugin_JabberNotifierSystem_config_jabber_ex_srv  = 'Example: jabber.org:5222
 
 # Send notifier setting strings 
 $s_plugin_JabberNotifierSystem_send_msg          = 'Configuring listing incidents';
+$s_plugin_JabberNotifierSystem_send_new_bug  = 'Notify me when new bug created';
 $s_plugin_JabberNotifierSystem_send_new_bugnote  = 'Notify me when you add comment';
 $s_plugin_JabberNotifierSystem_send_edit_bugnote = 'Notify on change comment';
 $s_plugin_JabberNotifierSystem_send_del_bugnote  = 'Notify when deleting a comment';
@@ -140,6 +141,7 @@ $s_plugin_JabberNotifierSystem_msg_send_error         = 'Error sending message';
 $s_plugin_JabberNotifierSystem_separator = '---------------------------------------------------------------------------------';
 
 # Coment strings
+$s_plugin_JabberNotifierSystem_msg_action_bug_add   = 'New bug created.';
 $s_plugin_JabberNotifierSystem_msg_action_bugnote_add   = 'In your incident was added a comment.';
 $s_plugin_JabberNotifierSystem_msg_action_bugnote_edit  = 'In your incident has been changed comment.';
 $s_plugin_JabberNotifierSystem_msg_action_bugnote_del   = 'In your incident has been deleted comment.';
@@ -196,4 +198,5 @@ $s_plugin_JabberNotifierSystem_msg_header     = 'The essence of the task:';
 $s_plugin_JabberNotifierSystem_msg_assign     = 'New Executive:';
 $s_plugin_JabberNotifierSystem_msg_initiator  = 'The Initiator:';
 $s_plugin_JabberNotifierSystem_msg_link_bug   = 'A reference to an incident:';
+$s_plugin_JabberNotifierSystem_msg_description= 'Description:';
 ?>

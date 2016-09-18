@@ -24,7 +24,7 @@ class JabberNotifierSystemPlugin extends MantisPlugin {
     $this->name        = plugin_lang_get( 'title' );
     $this->description = plugin_lang_get( 'description' );
     $this->page        = 'config_main';
-    $this->version     = '1.0';
+    $this->version     = '1.1';
     $this->requires    = array('MantisCore' => '1.2.0',);
     $this->author      = 'AcanthiS';
     $this->contact     = 'acanthis@ya.ru';
@@ -43,6 +43,7 @@ class JabberNotifierSystemPlugin extends MantisPlugin {
       'jbr_pwd'                => '',
       'add_send_quick_msg'     => OFF,
       'change_xmpp_login'      => OFF,
+      'send_mes_new_bug'   => ON,
       'send_mes_new_bugnote'   => ON,
       'send_mes_edit_bugnote'  => ON,
       'send_mes_del_bugnote'   => OFF,
@@ -91,8 +92,28 @@ class JabberNotifierSystemPlugin extends MantisPlugin {
       'EVENT_BUG_ACTION'         => 'bug_actions',
       'EVENT_BUG_DELETED'        => 'bug_delete',
       'EVENT_LAYOUT_CONTENT_END' => 'change_xmpp_login',
+      'EVENT_REPORT_BUG'         => 'bug_add',
     );
   }
+
+  /**
+   * Send message when bug created.
+   */
+  function bug_add( $p_event, $p_bug_data ) {
+	$p_bug_id=$p_bug_data->id;
+    if ( check_user_from_projects_table( $p_bug_id ) ) {
+      if ( (ON == plugin_config_get( 'send_mes_new_bug' )) ) {
+	$t_recipients = email_collect_recipients( $p_bug_id, 'new', array()  );
+	if( is_array( $t_recipients ) ) {			
+		foreach( $t_recipients as $t_user_id => $t_user_email ) {
+			send_msg( get_xmpp_login( $t_user_id ), gen_add_bug_msg( $t_user_id, $p_bug_id ) );		
+			}
+		}
+        //send_msg( get_xmpp_login( $reporter_user_id ), gen_add_bug_msg( $reporter_user_id, $p_bug_data->id ) );
+      }
+    }
+  }
+
 
   /**
    * Send message when bugnote add.
@@ -146,6 +167,8 @@ class JabberNotifierSystemPlugin extends MantisPlugin {
    * Send message bug_actions.
    */
   function bug_actions( $p_event, $p_event_str, $p_bug_id ) {
+	if(!bug_exists($p_bug_id))return;
+	
     if ( check_user_from_projects_table( $p_bug_id ) ) {
 
       $f_action = gpc_get_string( 'action' );

@@ -9,6 +9,7 @@ For now notification send authors when:
 * add new comment
 * edit comment
 * delete comment
+* new! create new bug notification send to same recipients as email notification 
 
 And send notification for **multiply** action with issues:
 
