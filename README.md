@@ -1,5 +1,4 @@
 ## Jabber Notify System (JNS) (English)
-Copyright (C) 2012 Nikitin Artem
 
 ### Description
 This plugin used for sending messages through [XMPP](http://ru.wikipedia.org/wiki/XMPP) protocol.
