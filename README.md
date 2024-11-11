@@ -99,8 +99,3 @@ Copyright (C) 2012 Nikitin Artem
 
 ###### Управление выборочной отправкой
 ![Управление выборочной отправкой](https://github.com/mantisbt-plugins/jabber-notify/blob/master/screenshots/screenshot-ru-3.png?raw=true)
-
-### Контакты
-e-mail: acanthis83@gmail.com
-
-icq: 411746920
