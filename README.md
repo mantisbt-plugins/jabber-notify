@@ -46,13 +46,8 @@ And send notification for **multiply** action with issues:
 ###### Manage selected sending
 ![Manage selected sending](https://github.com/mantisbt-plugins/jabber-notify/blob/master/screenshots/screenshot-en-3.png?raw=true)
 
-### Contacts
-e-mail: acanthis83@gmail.com
-
-icq: 411746920
 ###
 ## Jabber Notify System (JNS) (Русский)
-Copyright (C) 2012 Nikitin Artem
 
 ### Описание
 Данный плагин предназначен для отправки уведомлений по протоколу [XMPP](http://ru.wikipedia.org/wiki/XMPP).
